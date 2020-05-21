@@ -1,0 +1,12 @@
+first_author	publication_year	genome_version	database_source	inclusion_criteria	type_of_study
+Bajhaiya	2016	5.3.1	Phytozome 9.1	fold difference greater than 2	gene_expression
+Blaby	2013	4.3	Augustus u10.2	fold difference greater than 2	gene_expression
+Boyle	2012	4.3	Augustus u10.2	fold difference greater than 2	gene_expression
+Gargouri	2015	5.5	Phytozyme 10.0	fold difference greater than 2	gene_expression
+Gargouri	2015	5.5	Phytozyme 10.0	p-value <0.05	gene_expression
+Goodenough	2014	4.3	Augustus 10.2	fold difference greater than 2	gene_expression
+Hemme	2014	4.3	Augustus 10.2	fold difference greater than 2	gene_expression
+Hemme	2014	4.3	Augustus 10.2	p-value <0.05	gene_expression
+Juergens	2015	5.3.1	Phytozome 9	fold difference greater than 2	gene_expression
+Juergens	2015	5.3.1	Phytozome 9	fold difference greater than 2	protein_expression
+Kwak	2017	5.5	Phytozome 10	fold difference greater than 2	gene_expression
