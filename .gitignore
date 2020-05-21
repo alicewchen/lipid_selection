@@ -1,3 +1,6 @@
 source_data/
 vcf/
 intermediate_data_01/
+intermediate_data_02/
+*.png
+recycle_bin/
