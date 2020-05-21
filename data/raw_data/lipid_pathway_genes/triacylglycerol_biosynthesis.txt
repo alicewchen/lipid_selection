@@ -1,0 +1,31 @@
+triacylglycerol biosynthesis (Chlamydomonas)
+
+Gene ID	Gene Accession	Gene name	Reaction id	Reaction EC	Enzymatic activity	Evidence
+GIO2-2407	Cre02.g143000.t1.2	Cre02.g143000.t1.2	RXN-1381	2.3.1.15	glycerol-3-phosphate O-acyltransferase	EV-COMP
+GIO2-1075	Cre06.g273250.t1.2	Cre06.g273250.t1.2	RXN-1381	2.3.1.15	glycerol-3-phosphate O-acyltransferase	EV-COMP
+GIO2-979	Cre06.g289800.t1.2	Cre06.g289800.t1.2	RXN-1623	2.3.1.51	1-acylglycerol-3-phosphate O-acyltransferase	EV-COMP
+GIO2-1268	Cre09.g398289.t1.1	Cre09.g398289.t1.1	RXN-1623	2.3.1.51	1-acylglycerol-3-phosphate O-acyltransferase	EV-COMP
+GIO2-1587	Cre17.g738350.t1.2	Cre17.g738350.t1.2	RXN-1623	2.3.1.51	1-acylglycerol-3-phosphate O-acyltransferase	EV-COMP
+GIO2-2456	Cre01.g000300.t1.1	Cre01.g000300.t1.1	RXN-1623	2.3.1.51	1-acylglycerol-3-phosphate O-acyltransferase	EV-COMP
+GIO2-4697	Cre09.g402404.t1.1	Cre09.g402404.t1.1	RXN-1623	2.3.1.51	1-acylglycerol-3-phosphate O-acyltransferase	EV-COMP
+GIO2-1045	Cre06.g295250.t1.1	Cre06.g295250.t1.1	PHOSPHATIDATE-PHOSPHATASE-RXN	3.1.3.4	phosphatidate phosphatase	EV-COMP
+GIO2-903	Cre06.g272400.t1.2	Cre06.g272400.t1.2	PHOSPHATIDATE-PHOSPHATASE-RXN	3.1.3.4	phosphatidate phosphatase	EV-COMP
+GIO2-668	Cre14.g628752.t1.1	Cre14.g628752.t1.1	PHOSPHATIDATE-PHOSPHATASE-RXN	3.1.3.4	phosphatidate phosphatase	EV-COMP
+GIO2-1345	Cre05.g230900.t1.1	Cre05.g230900.t1.1	PHOSPHATIDATE-PHOSPHATASE-RXN	3.1.3.4	phosphatidate phosphatase	EV-COMP
+GIO2-4015	Cre05.g240000.t1.2	Cre05.g240000.t1.2	PHOSPHATIDATE-PHOSPHATASE-RXN	3.1.3.4	phosphatidate phosphatase	EV-COMP
+GIO2-5078	Cre03.g150050.t1.1	Cre03.g150050.t1.1	PHOSPHATIDATE-PHOSPHATASE-RXN	3.1.3.4	phosphatidate phosphatase	EV-COMP
+GIO2-3094	Cre12.g506600.t1.2	Cre12.g506600.t1.2	PHOSPHATIDATE-PHOSPHATASE-RXN	3.1.3.4	Cre12.g506600.t1.2	EV-COMP
+GIO2-3541	Cre02.g106400.t1.3	Cre02.g106400.t1.3	RXNIO2-13	2.3.1.-	galactolipid:diacylglycerol acyltransferase	EV-EXP
+GIO2-1453	Cre02.g106400.t1.1	Cre02.g106400.t1.1	2.3.1.158-RXN	2.3.1.158	phospholipid:diacylglycerol acyltransferase	EV-COMP
+GIO2-3541	Cre02.g106400.t1.3	Cre02.g106400.t1.3	2.3.1.158-RXN	2.3.1.158	phospholipid:diacylglycerol acyltransferase	EV-COMP
+GIO2-3541	Cre02.g106400.t1.3	Cre02.g106400.t1.3	RXN-12383	2.3.1.-	diacylglycerol:diacylglycerol transacylase	EV-EXP
+GIO2-260	Cre12.g557750.t1.1	Cre12.g557750.t1.1	DIACYLGLYCEROL-O-ACYLTRANSFERASE-RXN	2.3.1.20	diacylglycerol O-acyltransferase	EV-COMP
+GIO2-366	Cre09.g386912.t1.1	Cre09.g386912.t1.1	DIACYLGLYCEROL-O-ACYLTRANSFERASE-RXN	2.3.1.20	diacylglycerol O-acyltransferase	EV-COMP
+GIO2-817	Cre08.g377300.t1.1	Cre08.g377300.t1.1	DIACYLGLYCEROL-O-ACYLTRANSFERASE-RXN	2.3.1.20	diacylglycerol O-acyltransferase	EV-COMP
+GIO2-1164	Cre12.g521650.t1.2	Cre12.g521650.t1.2	DIACYLGLYCEROL-O-ACYLTRANSFERASE-RXN	2.3.1.20	diacylglycerol O-acyltransferase	EV-COMP
+GIO2-1220	Cre02.g079050.t1.1	Cre02.g079050.t1.1	DIACYLGLYCEROL-O-ACYLTRANSFERASE-RXN	2.3.1.20	diacylglycerol O-acyltransferase	EV-COMP
+GIO2-5004	Cre02.g079003.t1.1	Cre02.g079003.t1.1	DIACYLGLYCEROL-O-ACYLTRANSFERASE-RXN	2.3.1.20	diacylglycerol O-acyltransferase	EV-COMP
+GIO2-5053	Cre01.g045903.t1.1	Cre01.g045903.t1.1	DIACYLGLYCEROL-O-ACYLTRANSFERASE-RXN	2.3.1.20	diacylglycerol O-acyltransferase	EV-COMP
+GIO2-5164	Cre08.g365950.t1.2	Cre08.g365950.t1.2	DIACYLGLYCEROL-O-ACYLTRANSFERASE-RXN	2.3.1.20	diacylglycerol O-acyltransferase	EV-COMP
+GIO2-3980	Cre06.g299050.t1.2	Cre06.g299050.t1.2	DIACYLGLYCEROL-O-ACYLTRANSFERASE-RXN	2.3.1.20	Cre06.g299050.t1.2	EV-COMP
+GIO2-4898	Cre03.g205050.t1.2	Cre03.g205050.t1.2	DIACYLGLYCEROL-O-ACYLTRANSFERASE-RXN	2.3.1.20	Cre03.g205050.t1.2	EV-COMP
