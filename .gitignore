@@ -1,2 +1,4 @@
-vcf/
-.ipynb_checkpoints/
+*/vcf/ 
+.ipynb_checkpoints/ 
+*/data/
+*.csv
