@@ -1,0 +1,108 @@
+superpathway of fatty acid biosynthesis II (plant)
+
+Gene ID	Gene Accession	Gene name	Reaction id	Reaction EC	Enzymatic activity	Evidence
+GIO2-3915	Cre08.g359350.t1.2	Cre08.g359350.t1.2	ACETYL-COA-CARBOXYLTRANSFER-RXN	6.4.1.2	acetyl-CoA carboxylase	EV-COMP
+GIO2-3950	Cre17.g715250.t1.2	Cre17.g715250.t1.2	ACETYL-COA-CARBOXYLTRANSFER-RXN	6.4.1.2	acetyl-CoA carboxylase	EV-COMP
+GIO2-2854	Cre12.g519100.t1.2	Cre12.g519100.t1.2	ACETYL-COA-CARBOXYLTRANSFER-RXN	6.4.1.2	acetyl-CoA carboxylase	EV-COMP
+GIO2-3981	Cre12.g484000.t1.2	Cre12.g484000.t1.2	ACETYL-COA-CARBOXYLTRANSFER-RXN	6.4.1.2	acetyl-CoA carboxylase	EV-COMP
+GIO2-486	Cre08.g373050.t1.1	Cre08.g373050.t1.1	ACETYL-COA-CARBOXYLTRANSFER-RXN	6.4.1.2	acetyl-CoA carboxylase	EV-COMP
+GIO2-494	Cre01.g037850.t1.1	Cre01.g037850.t1.1	ACETYL-COA-CARBOXYLTRANSFER-RXN	6.4.1.2	acetyl-CoA carboxylase	EV-COMP
+GIO2-252	Cre14.g621650.t1.1	Cre14.g621650.t1.1	MALONYL-COA-ACP-TRANSACYL-RXN	2.3.1.39/2.3.1.85/2.3.1.86	fatty-acyl-CoA synthase	EV-COMP
+GIO2-3734	Cre29.g757897.t1.1	Cre29.g757897.t1.1	MALONYL-COA-ACP-TRANSACYL-RXN	2.3.1.39/2.3.1.85/2.3.1.86	fatty-acyl-CoA synthase	EV-COMP
+GIO2-3605	Cre02.g088250.t1.2	Cre02.g088250.t1.2	MALONYL-COA-ACP-TRANSACYL-RXN	2.3.1.39/2.3.1.85/2.3.1.86	Cre02.g088250.t1.2	EV-COMP
+GIO2-2716	Cre04.g216950.t1.2	Cre04.g216950.t1.2	2.3.1.180-RXN	2.3.1.180	beta-ketoacyl-acyl-carrier-protein synthase III	EV-COMP
+GIO2-1820	Cre03.g213313.t1.1	Cre03.g213313.t1.1	RXN-9514	1.1.1.100/2.3.1.85/2.3.1.86	fatty-acyl-CoA synthase	EV-COMP
+GIO2-373	Cre06.g309826.t1.1	Cre06.g309826.t1.1	RXN-9514	1.1.1.100/2.3.1.85/2.3.1.86	fatty-acyl-CoA synthase	EV-COMP
+GIO2-2577	Cre03.g172000.t1.2	Cre03.g172000.t1.2	RXN-9514	1.1.1.100/2.3.1.85/2.3.1.86	fatty-acyl-CoA synthase	EV-COMP
+GIO2-3197	Cre02.g103100.t1.1	Cre02.g103100.t1.1	RXN-9514	1.1.1.100/2.3.1.85/2.3.1.86	fatty-acyl-CoA synthase	EV-COMP
+GIO2-2703	Cre03.g208050.t1.2	Cre03.g208050.t1.2	4.2.1.58-RXN	2.3.1.85/2.3.1.86/4.2.1.59	fatty-acyl-CoA synthase	EV-COMP
+GIO2-361	Cre06.g294950.t1.1	Cre06.g294950.t1.1	RXN-9657	1.3.1.9	enoyl-[acyl-carrier-protein] reductase (NADH)	EV-COMP
+GIO2-5050	Cre10.g438050.t1.1	Cre10.g438050.t1.1	RXN-9516	2.3.1.41	beta-ketoacyl-acyl-carrier-protein synthase I	EV-COMP
+GIO2-1596	Cre11.g467723.t1.1	Cre11.g467723.t1.1	RXN-9516	2.3.1.41	beta-ketoacyl-acyl-carrier-protein synthase I	EV-COMP
+GIO2-373	Cre06.g309826.t1.1	Cre06.g309826.t1.1	RXN-9516	2.3.1.41	beta-ketoacyl-acyl-carrier-protein synthase I	EV-COMP
+GIO2-1820	Cre03.g213313.t1.1	Cre03.g213313.t1.1	RXN-9518	1.1.1.100/2.3.1.85/2.3.1.86	fatty-acyl-CoA synthase	EV-COMP
+GIO2-373	Cre06.g309826.t1.1	Cre06.g309826.t1.1	RXN-9518	1.1.1.100/2.3.1.85/2.3.1.86	fatty-acyl-CoA synthase	EV-COMP
+GIO2-2577	Cre03.g172000.t1.2	Cre03.g172000.t1.2	RXN-9518	1.1.1.100/2.3.1.85/2.3.1.86	fatty-acyl-CoA synthase	EV-COMP
+GIO2-3197	Cre02.g103100.t1.1	Cre02.g103100.t1.1	RXN-9518	1.1.1.100/2.3.1.85/2.3.1.86	fatty-acyl-CoA synthase	EV-COMP
+GIO2-2703	Cre03.g208050.t1.2	Cre03.g208050.t1.2	RXN-9520	2.3.1.85/2.3.1.86/4.2.1.59	fatty-acyl-CoA synthase	EV-COMP
+GIO2-361	Cre06.g294950.t1.1	Cre06.g294950.t1.1	RXN-9658	1.3.1.9	enoyl-[acyl-carrier-protein] reductase (NADH)	EV-COMP
+GIO2-5050	Cre10.g438050.t1.1	Cre10.g438050.t1.1	RXN-9523	2.3.1.41	beta-ketoacyl-acyl-carrier-protein synthase I	EV-COMP
+GIO2-373	Cre06.g309826.t1.1	Cre06.g309826.t1.1	RXN-9523	2.3.1.41	beta-ketoacyl-acyl-carrier-protein synthase I	EV-COMP
+GIO2-1596	Cre11.g467723.t1.1	Cre11.g467723.t1.1	RXN-9523	2.3.1.41	beta-ketoacyl-acyl-carrier-protein synthase I	EV-COMP
+GIO2-1820	Cre03.g213313.t1.1	Cre03.g213313.t1.1	RXN-9524	1.1.1.100/2.3.1.85/2.3.1.86	fatty-acyl-CoA synthase	EV-COMP
+GIO2-373	Cre06.g309826.t1.1	Cre06.g309826.t1.1	RXN-9524	1.1.1.100/2.3.1.85/2.3.1.86	fatty-acyl-CoA synthase	EV-COMP
+GIO2-2577	Cre03.g172000.t1.2	Cre03.g172000.t1.2	RXN-9524	1.1.1.100/2.3.1.85/2.3.1.86	fatty-acyl-CoA synthase	EV-COMP
+GIO2-3197	Cre02.g103100.t1.1	Cre02.g103100.t1.1	RXN-9524	1.1.1.100/2.3.1.85/2.3.1.86	fatty-acyl-CoA synthase	EV-COMP
+GIO2-2703	Cre03.g208050.t1.2	Cre03.g208050.t1.2	4.2.1.59-RXN	2.3.1.85/2.3.1.86/4.2.1.59	fatty-acyl-CoA synthase	EV-COMP
+GIO2-361	Cre06.g294950.t1.1	Cre06.g294950.t1.1	RXN-9659	1.3.1.9	enoyl-[acyl-carrier-protein] reductase (NADH)	EV-COMP
+GIO2-5050	Cre10.g438050.t1.1	Cre10.g438050.t1.1	RXN-9527	2.3.1.41	beta-ketoacyl-acyl-carrier-protein synthase I	EV-COMP
+GIO2-373	Cre06.g309826.t1.1	Cre06.g309826.t1.1	RXN-9527	2.3.1.41	beta-ketoacyl-acyl-carrier-protein synthase I	EV-COMP
+GIO2-1596	Cre11.g467723.t1.1	Cre11.g467723.t1.1	RXN-9527	2.3.1.41	beta-ketoacyl-acyl-carrier-protein synthase I	EV-COMP
+GIO2-1820	Cre03.g213313.t1.1	Cre03.g213313.t1.1	RXN-9528	1.1.1.100/2.3.1.85/2.3.1.86	fatty-acyl-CoA synthase	EV-COMP
+GIO2-373	Cre06.g309826.t1.1	Cre06.g309826.t1.1	RXN-9528	1.1.1.100/2.3.1.85/2.3.1.86	fatty-acyl-CoA synthase	EV-COMP
+GIO2-2577	Cre03.g172000.t1.2	Cre03.g172000.t1.2	RXN-9528	1.1.1.100/2.3.1.85/2.3.1.86	fatty-acyl-CoA synthase	EV-COMP
+GIO2-3197	Cre02.g103100.t1.1	Cre02.g103100.t1.1	RXN-9528	1.1.1.100/2.3.1.85/2.3.1.86	fatty-acyl-CoA synthase	EV-COMP
+GIO2-2703	Cre03.g208050.t1.2	Cre03.g208050.t1.2	RXN-9655	2.3.1.85/2.3.1.86/4.2.1.59	fatty-acyl-CoA synthase	EV-COMP
+GIO2-361	Cre06.g294950.t1.1	Cre06.g294950.t1.1	RXN-9660	1.3.1.9	enoyl-[acyl-carrier-protein] reductase (NADH)	EV-COMP
+GIO2-5050	Cre10.g438050.t1.1	Cre10.g438050.t1.1	RXN-9531	2.3.1.41	beta-ketoacyl-acyl-carrier-protein synthase I	EV-COMP
+GIO2-373	Cre06.g309826.t1.1	Cre06.g309826.t1.1	RXN-9531	2.3.1.41	beta-ketoacyl-acyl-carrier-protein synthase I	EV-COMP
+GIO2-1596	Cre11.g467723.t1.1	Cre11.g467723.t1.1	RXN-9531	2.3.1.41	beta-ketoacyl-acyl-carrier-protein synthase I	EV-COMP
+GIO2-1820	Cre03.g213313.t1.1	Cre03.g213313.t1.1	RXN-9532	1.1.1.100/2.3.1.85/2.3.1.86	fatty-acyl-CoA synthase	EV-COMP
+GIO2-373	Cre06.g309826.t1.1	Cre06.g309826.t1.1	RXN-9532	1.1.1.100/2.3.1.85/2.3.1.86	fatty-acyl-CoA synthase	EV-COMP
+GIO2-2577	Cre03.g172000.t1.2	Cre03.g172000.t1.2	RXN-9532	1.1.1.100/2.3.1.85/2.3.1.86	fatty-acyl-CoA synthase	EV-COMP
+GIO2-3197	Cre02.g103100.t1.1	Cre02.g103100.t1.1	RXN-9532	1.1.1.100/2.3.1.85/2.3.1.86	fatty-acyl-CoA synthase	EV-COMP
+GIO2-2703	Cre03.g208050.t1.2	Cre03.g208050.t1.2	RXN-9533	2.3.1.85/2.3.1.86/4.2.1.59	fatty-acyl-CoA synthase	EV-COMP
+GIO2-361	Cre06.g294950.t1.1	Cre06.g294950.t1.1	RXN-9661	1.3.1.9	enoyl-[acyl-carrier-protein] reductase (NADH)	EV-COMP
+GIO2-4998	Cre04.g213761.t1.1	Cre04.g213761.t1.1	3.1.2.21-RXN	3.1.2.21	oleoyl-[acyl-carrier-protein] hydrolase	EV-COMP
+GIO2-4051	Cre03.g211745.t1.1	Cre03.g211745.t1.1	RXN-16393	6.2.1.3	long-chain-fatty-acid-CoA ligase	EV-COMP
+GIO2-382	Cre13.g586000.t1.2	Cre13.g586000.t1.2	RXN-16393	6.2.1.3	long-chain-fatty-acid-CoA ligase	EV-COMP
+GIO2-4921	Cre12.g507400.t1.2	Cre12.g507400.t1.2	RXN-16393	6.2.1.3	long-chain-fatty-acid-CoA ligase	EV-COMP
+GIO2-5050	Cre10.g438050.t1.1	Cre10.g438050.t1.1	RXN-9535	2.3.1.41/2.3.1.85/2.3.1.86	beta-ketoacyl-acyl-carrier-protein synthase I	EV-COMP
+GIO2-373	Cre06.g309826.t1.1	Cre06.g309826.t1.1	RXN-9535	2.3.1.41/2.3.1.85/2.3.1.86	beta-ketoacyl-acyl-carrier-protein synthase I	EV-COMP
+GIO2-1596	Cre11.g467723.t1.1	Cre11.g467723.t1.1	RXN-9535	2.3.1.41/2.3.1.85/2.3.1.86	fatty-acyl-CoA synthase	EV-COMP
+GIO2-1820	Cre03.g213313.t1.1	Cre03.g213313.t1.1	RXN-9536	1.1.1.100/2.3.1.85/2.3.1.86	fatty-acyl-CoA synthase	EV-COMP
+GIO2-373	Cre06.g309826.t1.1	Cre06.g309826.t1.1	RXN-9536	1.1.1.100/2.3.1.85/2.3.1.86	fatty-acyl-CoA synthase	EV-COMP
+GIO2-2577	Cre03.g172000.t1.2	Cre03.g172000.t1.2	RXN-9536	1.1.1.100/2.3.1.85/2.3.1.86	fatty-acyl-CoA synthase	EV-COMP
+GIO2-3197	Cre02.g103100.t1.1	Cre02.g103100.t1.1	RXN-9536	1.1.1.100/2.3.1.85/2.3.1.86	fatty-acyl-CoA synthase	EV-COMP
+GIO2-2703	Cre03.g208050.t1.2	Cre03.g208050.t1.2	RXN-9537	2.3.1.85/2.3.1.86/4.2.1.59	fatty-acyl-CoA synthase	EV-COMP
+GIO2-361	Cre06.g294950.t1.1	Cre06.g294950.t1.1	RXN-9662	1.3.1.9	enoyl-[acyl-carrier-protein] reductase (NADH)	EV-COMP
+GIO2-5050	Cre10.g438050.t1.1	Cre10.g438050.t1.1	RXN-9539	2.3.1.41	beta-ketoacyl-acyl-carrier-protein synthase I	EV-COMP
+GIO2-373	Cre06.g309826.t1.1	Cre06.g309826.t1.1	RXN-9539	2.3.1.41	beta-ketoacyl-acyl-carrier-protein synthase I	EV-COMP
+GIO2-1596	Cre11.g467723.t1.1	Cre11.g467723.t1.1	RXN-9539	2.3.1.41	beta-ketoacyl-acyl-carrier-protein synthase I	EV-COMP
+GIO2-1820	Cre03.g213313.t1.1	Cre03.g213313.t1.1	RXN-9540	1.1.1.100/2.3.1.85/2.3.1.86	fatty-acyl-CoA synthase	EV-COMP
+GIO2-373	Cre06.g309826.t1.1	Cre06.g309826.t1.1	RXN-9540	1.1.1.100/2.3.1.85/2.3.1.86	fatty-acyl-CoA synthase	EV-COMP
+GIO2-2577	Cre03.g172000.t1.2	Cre03.g172000.t1.2	RXN-9540	1.1.1.100/2.3.1.85/2.3.1.86	fatty-acyl-CoA synthase	EV-COMP
+GIO2-3197	Cre02.g103100.t1.1	Cre02.g103100.t1.1	RXN-9540	1.1.1.100/2.3.1.85/2.3.1.86	fatty-acyl-CoA synthase	EV-COMP
+GIO2-2703	Cre03.g208050.t1.2	Cre03.g208050.t1.2	4.2.1.61-RXN	2.3.1.85/2.3.1.86/4.2.1.59	fatty-acyl-CoA synthase	EV-COMP
+GIO2-361	Cre06.g294950.t1.1	Cre06.g294950.t1.1	RXN-9663	1.3.1.9	enoyl-[acyl-carrier-protein] reductase (NADH)	EV-COMP
+GIO2-4998	Cre04.g213761.t1.1	Cre04.g213761.t1.1	RXN-9549	3.1.2.14	oleoyl-[acyl-carrier-protein] hydrolase	EV-COMP
+GIO2-4051	Cre03.g211745.t1.1	Cre03.g211745.t1.1	RXN-9623	6.2.1.3	long-chain-fatty-acid-CoA ligase	EV-COMP
+GIO2-382	Cre13.g586000.t1.2	Cre13.g586000.t1.2	RXN-9623	6.2.1.3	long-chain-fatty-acid-CoA ligase	EV-COMP
+GIO2-338	Cre13.g566650.t1.2	Cre13.g566650.t1.2	RXN-9623	6.2.1.3	long-chain-fatty-acid-CoA ligase	EV-COMP
+GIO2-2294	Cre03.g182050.t1.2	Cre03.g182050.t1.2	RXN-9623	6.2.1.3	long-chain-fatty-acid-CoA ligase	EV-COMP
+GIO2-4921	Cre12.g507400.t1.2	Cre12.g507400.t1.2	RXN-9623	6.2.1.3	long-chain-fatty-acid-CoA ligase	EV-COMP
+GIO2-4237	Cre12.g500715.t1.2	Cre12.g500715.t1.2	RXN-9623	6.2.1.3	long-chain-fatty-acid-CoA ligase	EV-COMP
+GIO2-1820	Cre03.g213313.t1.1	Cre03.g213313.t1.1	RXN-9633	1.1.1.100/2.3.1.86	fatty-acyl-CoA synthase	EV-COMP
+GIO2-373	Cre06.g309826.t1.1	Cre06.g309826.t1.1	RXN-9633	1.1.1.100/2.3.1.86	fatty-acyl-CoA synthase	EV-COMP
+GIO2-2577	Cre03.g172000.t1.2	Cre03.g172000.t1.2	RXN-9633	1.1.1.100/2.3.1.86	fatty-acyl-CoA synthase	EV-COMP
+GIO2-3197	Cre02.g103100.t1.1	Cre02.g103100.t1.1	RXN-9633	1.1.1.100/2.3.1.86	fatty-acyl-CoA synthase	EV-COMP
+GIO2-2703	Cre03.g208050.t1.2	Cre03.g208050.t1.2	RXN-9634	2.3.1.86/4.2.1.59	fatty-acyl-CoA synthase	EV-COMP
+GIO2-361	Cre06.g294950.t1.1	Cre06.g294950.t1.1	RXN-9635	1.3.1.9	enoyl-[acyl-carrier-protein] reductase (NADH)	EV-COMP
+GIO2-4998	Cre04.g213761.t1.1	Cre04.g213761.t1.1	RXN-9548	3.1.2.14	oleoyl-[acyl-carrier-protein] hydrolase	EV-COMP
+GIO2-4051	Cre03.g211745.t1.1	Cre03.g211745.t1.1	RXN-16380	6.2.1.3	long-chain-fatty-acid-CoA ligase	EV-COMP
+GIO2-382	Cre13.g586000.t1.2	Cre13.g586000.t1.2	RXN-16380	6.2.1.3	long-chain-fatty-acid-CoA ligase	EV-COMP
+GIO2-338	Cre13.g566650.t1.2	Cre13.g566650.t1.2	RXN-16380	6.2.1.3	long-chain-fatty-acid-CoA ligase	EV-COMP
+GIO2-2294	Cre03.g182050.t1.2	Cre03.g182050.t1.2	RXN-16380	6.2.1.3	long-chain-fatty-acid-CoA ligase	EV-COMP
+GIO2-4921	Cre12.g507400.t1.2	Cre12.g507400.t1.2	RXN-16380	6.2.1.3	long-chain-fatty-acid-CoA ligase	EV-COMP
+GIO2-4237	Cre12.g500715.t1.2	Cre12.g500715.t1.2	RXN-16380	6.2.1.3	long-chain-fatty-acid-CoA ligase	EV-COMP
+GIO2-5113	Cre14.g630883.t1.1	Cre14.g630883.t1.1	RXN-7903	1.14.19.2	stearoyl-[acyl-carrier-protein] 9-desaturase	EV-COMP
+GIO2-4605	Cre17.g701700.t1.2	Cre17.g701700.t1.2	RXN-7903	1.14.19.2	stearoyl-[acyl-carrier-protein] 9-desaturase	EV-COMP
+GIO2-2146	Cre10.g458183.t1.1	Cre10.g458183.t1.1	RXN-7903	1.14.19.2	stearoyl-[acyl-carrier-protein] 9-desaturase	EV-COMP
+GIO2-3081	Cre06.g256750.t1.2	Cre06.g256750.t1.2	3.1.2.14-RXN	3.1.2.14	oleoyl-[acyl-carrier-protein] hydrolase	EV-COMP
+GIO2-4998	Cre04.g213761.t1.1	Cre04.g213761.t1.1	3.1.2.14-RXN	3.1.2.14	oleoyl-[acyl-carrier-protein] hydrolase	EV-COMP
+GIO2-4051	Cre03.g211745.t1.1	Cre03.g211745.t1.1	RXN-9644	6.2.1.3	long-chain-fatty-acid-CoA ligase	EV-COMP
+GIO2-382	Cre13.g586000.t1.2	Cre13.g586000.t1.2	RXN-9644	6.2.1.3	long-chain-fatty-acid-CoA ligase	EV-COMP
+GIO2-338	Cre13.g566650.t1.2	Cre13.g566650.t1.2	RXN-9644	6.2.1.3	long-chain-fatty-acid-CoA ligase	EV-COMP
+GIO2-2294	Cre03.g182050.t1.2	Cre03.g182050.t1.2	RXN-9644	6.2.1.3	long-chain-fatty-acid-CoA ligase	EV-COMP
+GIO2-4921	Cre12.g507400.t1.2	Cre12.g507400.t1.2	RXN-9644	6.2.1.3	long-chain-fatty-acid-CoA ligase	EV-COMP
+GIO2-4237	Cre12.g500715.t1.2	Cre12.g500715.t1.2	RXN-9644	6.2.1.3	long-chain-fatty-acid-CoA ligase	EV-COMP

@@ -1,0 +1,14 @@
+superpathway of acetyl-CoA biosynthesis
+
+Gene ID	Gene Accession	Gene name	Reaction id	Reaction EC	Enzymatic activity	Evidence
+GIO2-1827	Cre02.g088600.t1.2	Cre02.g088600.t1.2	ATP-CITRATE-PRO-S--LYASE-RXN	2.3.3.8	ATP citrate synthase	EV-COMP
+GIO2-2363	Cre05.g241850.t1.2	Cre05.g241850.t1.2	ATP-CITRATE-PRO-S--LYASE-RXN	2.3.3.8	Cre05.g241850.t1.2	EV-COMP
+GIO2-3565	Cre03.g158900.t1.2	Cre03.g158900.t1.2	RXN0-1133	2.3.1.12	dihydrolipoyllysine-residue acetyltransferase	EV-COMP
+GIO2-1838	Cre09.g386735.t1.1	Cre09.g386735.t1.1	RXN0-1133	2.3.1.12	dihydrolipoyllysine-residue acetyltransferase	EV-COMP
+GIO2-3259	Cre06.g252550.t1.1	Cre06.g252550.t1.1	RXN0-1133	2.3.1.12	dihydrolipoyllysine-residue acetyltransferase	EV-COMP
+GIO2-4107	Cre06.g278227.t1.1	Cre06.g278227.t1.1	RXN0-1133	2.3.1.12	dihydrolipoyllysine-residue acetyltransferase	EV-COMP
+GIO2-3695	Cre18.g749847.t1.1	Cre18.g749847.t1.1	RXN0-1132	1.8.1.4	dihydrolipoyl dehydrogenase	EV-COMP
+GIO2-3578	Cre01.g016514.t1.1	Cre01.g016514.t1.1	RXN0-1132	1.8.1.4	dihydrolipoyl dehydrogenase	EV-COMP
+GIO2-3033	Cre07.g337650.t1.2	Cre07.g337650.t1.2	RXN0-1134	1.2.4.1	Cre07.g337650.t1.2	EV-COMP
+GIO2-2408	Cre03.g194200.t1.2	Cre03.g194200.t1.2	RXN0-1134	1.2.4.1	Cre03.g194200.t1.2	EV-COMP
+GIO2-5140	Cre02.g099850.t1.1	Cre02.g099850.t1.1	RXN0-1134	1.2.4.1	pyruvate dehydrogenase (acetyl-transferring)	EV-COMP
