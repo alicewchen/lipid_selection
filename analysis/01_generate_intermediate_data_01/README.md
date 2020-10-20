@@ -24,3 +24,9 @@
 ## Important notes:
 
 * Omit 'Blaby_2013_DS8.xlsx' because it is RNA expression data not transcript expression data.
+
+## Notes about files in this folder:
+
+1. 20200716_sampled_genes_key.csv contains manually searched transcript id's for gene symbols that are not found in Phytozome12 using 05_Get_v5.5names_for_experimental_studies.ipynb
+
+2. Use 20200716_sampled_genes_key.csv to get the proper transcript id for each gene symbol mentioned in Summary of primary_data
