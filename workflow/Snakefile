@@ -1,0 +1,25 @@
+##### load config and sample sheets #####
+
+configfile: "../config/config.yaml"
+
+samples = list(range(config["SAMPLE_N"]))
+
+#1. Filter genes
+
+rule filter_genes:
+    input:
+        "../data/workflow/clean_primary_data.pk",
+        "../data/workflow/sampled_genes.pk",
+        "../data/workflow/SFS_and_divergence.pk"
+    output:
+        "../data/workflow/temp/candidate.pk",
+        "../data/workflow/temp/noncandidate.pk"  
+    log:
+        notebook="log/notebook/01_Filter_genes_processed.ipynb"
+    notebook:
+        "../analysis/04_filter_data/01_Filter_genes.ipynb"
+
+#2. Boostrapping
+
+#2a. Randomly sample n = RSAMPLE_SIZE genes from each pool of candidate and noncandidate genes
+
