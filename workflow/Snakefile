@@ -9,9 +9,13 @@ rule all:
         "log/notebook/01_Filter_genes_processed_{pool}.ipynb"], pool = pool),
         expand(["../data/workflow/samples/{pool}_{sample}.pk",
         "../data/workflow/bootstrap/run_{sample}/{pool}/SFS_input.txt",
-        "../data/workflow/bootstrap/run_{sample}/{pool}/divergence_file.txt"], pool = pool, sample = sample)
+        "../data/workflow/bootstrap/run_{sample}/{pool}/divergence_file.txt",
+        "../data/workflow/bootstrap/run_{sample}/{pool}/est_dfe_neut_config.txt",
+        "../data/workflow/bootstrap/run_{sample}/{pool}/est_dfe_sel_config.txt",
+        "../data/workflow/bootstrap/run_{sample}/{pool}/est_alpha_omega_config.txt"], pool = pool, sample = sample)
         
-#1. Filter genes
+        
+##### 1. Filter genes ##### 
 
 rule filter_genes:
     input:
@@ -26,10 +30,11 @@ rule filter_genes:
         notebook="log/notebook/01_Filter_genes_processed_{pool}.ipynb"
     notebook:
         "../analysis/04_filter_data/01_Filter_genes.ipynb"
-        
-#2. Boostrapping
+     
+     
+#####  2. Boostrapping ##### 
 
-#2a. Randomly sample n = RSAMPLE_SIZE genes from each pool of candidate and noncandidate genes
+#Randomly sample n = RSAMPLE_SIZE genes from each pool of candidate and noncandidate genes
 
 rule random_sample:
     input:
@@ -41,7 +46,10 @@ rule random_sample:
         prefix = "../data/workflow/samples/{pool}_{sample}.pk"
     script:
         "../scripts/random_sampling.py"
-        
+
+
+#####  3. Set up files for dfe_alpha ##### 
+
 rule generate_dfe_alpha_input:
     input:
         rules.random_sample.output
@@ -53,3 +61,20 @@ rule generate_dfe_alpha_input:
     script:
         "../scripts/generate_dfe_alpha_input.py"
 
+rule generate_dfe_alpha_config:
+    input:
+        rules.generate_dfe_alpha_input.output
+    output:
+        "../data/workflow/bootstrap/run_{sample}/{pool}/est_dfe_neut_config.txt",
+        "../data/workflow/bootstrap/run_{sample}/{pool}/est_dfe_sel_config.txt",
+        "../data/workflow/bootstrap/run_{sample}/{pool}/est_alpha_omega_config.txt"
+    params:
+        config_template_dir = "../data/workflow/dfe_alpha_config_template/",
+        prefix = "../data/workflow/bootstrap/run_{sample}/{pool}",
+        sample = "{sample}",
+        pool = "{pool}"
+    script:
+        "../scripts/generate_dfe_alpha_config.py"
+
+
+##### 4. Running dfe_alpha ##### 
