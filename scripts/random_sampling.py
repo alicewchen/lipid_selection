@@ -5,6 +5,19 @@ import pandas as pd
 import pickle
 import random
 import numpy as np
+
+import sys
+print(sys.executable)
+print(sys.version)
+print(sys.path)
+sys.path.extend(['/scratch/research/repos', 
+                 '/scratch/research/repos/ness_fasta', 
+                 '/scratch/research/repos/annotation', 
+                 '/scratch/research/repos/ness_fastq', 
+                 '/scratch/research/repos/ness_vcf', 
+                 '/scratch/research/repos/vcf2fasta'])
+from ness_vcf import SFS
+
 ##################
 #Define functions
 ##################
@@ -43,10 +56,20 @@ sample_list = df.index
 sample = bootstrap_with_replacement(sample_list = sample_list,
                                     size = snakemake.config['RSAMPLE_SIZE'],
                                     rep = n_sample)
+
 selected, neutral = get_total_SFSs(list_of_indexes = sample, 
                                    SFS_dataframe = df)
+
+selected = SFS(selected).fold().sfs
+neutral = SFS(neutral).fold().sfs
+
+selected_div = [str(i) for i in [1,sum(df.sites0),sum(df.diffs0)]]
+neutral_div = [str(i) for i in [0, sum(df.sites4), sum(df.diffs4)]]
+
 dictionary = {'selected': selected,
-             'neutral': neutral}
+             'neutral': neutral,
+             'selected_div': selected_div,
+             'neutral_div': neutral_div}
              
 with open(str(snakemake.params.prefix), "wb") as f:
     pickle.dump(dictionary, f)
