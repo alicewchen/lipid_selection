@@ -20,7 +20,7 @@ from ness_vcf import SFS
 
 dictionary = pickle.load(open(str(snakemake.input), "rb"))
 sfs_input_path = str(snakemake.output[0])
-divergenve_file_path = str(snakemake.output[1])
+divergence_file_path = str(snakemake.output[1])
 
 
 ##########################
@@ -45,6 +45,6 @@ with open(sfs_input_path, 'w') as f:
 # Generate divergence_file.txt
 ############################### 
 
-with open(divergenve_file_path, 'w') as f:
+with open(divergence_file_path, 'w') as f:
     f.write(" ".join(dictionary['selected_div'])+"\n") 
     f.write(" ".join(dictionary['neutral_div']))
