@@ -1,9 +1,15 @@
 ##### load config and sample sheets #####
 
 configfile: "../config/config.yaml"
-
-samples = list(range(config["SAMPLE_N"]))
-
+pool= ['candidate', 'noncandidate']
+sample= list(range(config["SAMPLE_N"])) 
+rule all:
+    input:
+        expand(["../data/workflow/pools/{pool}.pk",
+        "log/notebook/01_Filter_genes_processed_{pool}.ipynb"], pool = pool),
+        #expand("{sample}", sample = sample),
+        expand("../data/workflow/samples/{pool}_{sample}.pk", pool = pool, sample = sample)
+        
 #1. Filter genes
 
 rule filter_genes:
@@ -12,9 +18,25 @@ rule filter_genes:
         "../data/workflow/sampled_genes.pk",
         "../data/workflow/SFS_and_divergence.pk"
     output:
-        "../data/workflow/temp/candidate.pk",
-        "../data/workflow/temp/noncandidate.pk"  
+        "../data/workflow/pools/{pool}.pk"
+    params:
+        prefix = "../data/workflow/pools/{pool}.pk"
     log:
-        notebook="log/notebook/01_Filter_genes_processed.ipynb"
+        notebook="log/notebook/01_Filter_genes_processed_{pool}.ipynb"
     notebook:
         "../analysis/04_filter_data/01_Filter_genes.ipynb"
+        
+#2. Boostrapping
+
+#2a. Randomly sample n = RSAMPLE_SIZE genes from each pool of candidate and noncandidate genes
+
+rule random_sample:
+    input:
+        rules.filter_genes.output
+    output: 
+        "../data/workflow/samples/{pool}_{sample}.pk"
+    params:
+        sample = "{sample}",
+        prefix = "../data/workflow/samples/{pool}_{sample}.pk"
+    script:
+        "../scripts/random_sampling.py"
