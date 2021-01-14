@@ -7,8 +7,9 @@ rule all:
     input:
         expand(["../data/workflow/pools/{pool}.pk",
         "log/notebook/01_Filter_genes_processed_{pool}.ipynb"], pool = pool),
-        #expand("{sample}", sample = sample),
-        expand("../data/workflow/samples/{pool}_{sample}.pk", pool = pool, sample = sample)
+        expand(["../data/workflow/samples/{pool}_{sample}.pk",
+        "../data/workflow/bootstrap/run_{sample}/{pool}/SFS_input.txt",
+        "../data/workflow/bootstrap/run_{sample}/{pool}/divergence_file.txt"], pool = pool, sample = sample)
         
 #1. Filter genes
 
@@ -40,3 +41,15 @@ rule random_sample:
         prefix = "../data/workflow/samples/{pool}_{sample}.pk"
     script:
         "../scripts/random_sampling.py"
+        
+rule generate_dfe_alpha_input:
+    input:
+        rules.random_sample.output
+    output:
+        "../data/workflow/bootstrap/run_{sample}/{pool}/SFS_input.txt",
+        "../data/workflow/bootstrap/run_{sample}/{pool}/divergence_file.txt"
+    params:
+        prefix = "../data/workflow/bootstrap/run_{sample}/{pool}"
+    script:
+        "../scripts/generate_dfe_alpha_input.py"
+
