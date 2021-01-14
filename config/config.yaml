@@ -26,4 +26,4 @@ MIN_NUM_DETECTED : 1 #minimum number of studies that detected gene X as a candid
 
 RSAMPLE_SIZE : 100 #number of genes to randomly sample
 
-SAMPLE_N : 10 #number of boostrap w/ replacement samples
+SAMPLE_N : 3 #number of boostrap w/ replacement samples
