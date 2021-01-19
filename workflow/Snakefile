@@ -3,10 +3,15 @@
 configfile: "../config/config.yaml"
 pool= ['candidate', 'noncandidate']
 sample= list(range(config["SAMPLE_N"])) 
+
+scattergather:
+    split=len(pool)*len(sample)
+    
 rule all:
     input:
         expand(["../data/workflow/pools/{pool}.pk",
-        "log/notebook/01_Filter_genes_processed_{pool}.ipynb"], pool = pool),
+        "log/notebook/01_Filter_genes_processed_{pool}.ipynb",
+        "../data/workflow/bootstrap/{pool}_bootstrap_values.txt"], pool = pool),
         expand(["../data/workflow/samples/{pool}_{sample}.pk",
         "../data/workflow/bootstrap/run_{sample}/{pool}/SFS_input.txt",
         "../data/workflow/bootstrap/run_{sample}/{pool}/divergence_file.txt",
@@ -17,7 +22,7 @@ rule all:
         "../data/workflow/bootstrap/run_{sample}/{pool}/run_est_dfe_selected.log",
         "../data/workflow/bootstrap/run_{sample}/{pool}/run_est_alpha_omega.log",
         "../data/workflow/bootstrap/run_{sample}/{pool}/run_prop_muts_in_s_ranges.log",
-        ], pool = pool, sample = sample)
+        "../data/workflow/bootstrap/run_{sample}/{pool}/important_values.txt"], pool = pool, sample = sample)
         
         
 ##### 1. Filter genes ##### 
@@ -129,11 +134,41 @@ rule run_prop_muts_in_s_ranges:
     input:
         rules.run_est_alpha_omega.output
     output:
-        "../data/workflow/bootstrap/run_{sample}/{pool}/run_prop_muts_in_s_ranges.log"
+        output_file = "../data/workflow/bootstrap/run_{sample}/{pool}/output_file",
+        output_log = "../data/workflow/bootstrap/run_{sample}/{pool}/run_prop_muts_in_s_ranges.log"
     params:
         prefix = "../data/workflow/bootstrap/run_{sample}/{pool}/",
         sample = "{sample}",
         pool = "{pool}"
     group: "dfe_alpha_group"
     shell:
-        "prop_muts_in_s_ranges -c {params.prefix}selected/est_dfe.out -o {params.prefix}output_file &> {output}"
+        "prop_muts_in_s_ranges -c {params.prefix}selected/est_dfe.out -o {output.output_file} &> {output.output_log}"
+ 
+ 
+##### 5. Get important values ##### 
+
+
+
+rule extract_values:
+    input:
+        omega_output = rules.run_est_alpha_omega.output,
+        prop_output = rules.run_prop_muts_in_s_ranges.output.output_file,
+    output:
+        "../data/workflow/bootstrap/run_{sample}/{pool}/important_values.txt"
+    params:
+        prefix = "../data/workflow/bootstrap/run_{sample}/{pool}/",
+        sample = "{sample}",
+        pool = "{pool}"
+    script:
+        "../scripts/extract_dfe_alpha_values.py"
+        
+rule aggregate:
+    input:
+        expand("../data/workflow/bootstrap/run_{sample}/{{pool}}/important_values.txt", sample = sample, pool = pool)
+    output:
+        "../data/workflow/bootstrap/{pool}_bootstrap_values.txt"
+    params:
+        prefix = "../data/workflow/bootstrap/{pool}_bootstrap_values.txt",
+        pool = "{pool}"
+    script:
+        "../scripts/gather_values.py"
