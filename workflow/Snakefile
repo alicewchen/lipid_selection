@@ -12,7 +12,12 @@ rule all:
         "../data/workflow/bootstrap/run_{sample}/{pool}/divergence_file.txt",
         "../data/workflow/bootstrap/run_{sample}/{pool}/est_dfe_neut_config.txt",
         "../data/workflow/bootstrap/run_{sample}/{pool}/est_dfe_sel_config.txt",
-        "../data/workflow/bootstrap/run_{sample}/{pool}/est_alpha_omega_config.txt"], pool = pool, sample = sample)
+        "../data/workflow/bootstrap/run_{sample}/{pool}/est_alpha_omega_config.txt",
+        "../data/workflow/bootstrap/run_{sample}/{pool}/run_est_dfe_neutral.log",
+        "../data/workflow/bootstrap/run_{sample}/{pool}/run_est_dfe_selected.log",
+        "../data/workflow/bootstrap/run_{sample}/{pool}/run_est_alpha_omega.log",
+        "../data/workflow/bootstrap/run_{sample}/{pool}/run_prop_muts_in_s_ranges.log",
+        ], pool = pool, sample = sample)
         
         
 ##### 1. Filter genes ##### 
@@ -78,3 +83,57 @@ rule generate_dfe_alpha_config:
 
 
 ##### 4. Running dfe_alpha ##### 
+
+rule run_est_dfe_neutral:
+    input:
+        rules.generate_dfe_alpha_config.output
+    output:
+        "../data/workflow/bootstrap/run_{sample}/{pool}/run_est_dfe_neutral.log"
+    params:
+        prefix = "../data/workflow/bootstrap/run_{sample}/{pool}/",
+        sample = "{sample}",
+        pool = "{pool}"
+    group: "dfe_alpha_group"
+    shell:
+        "est_dfe -c {input[0]} &> {output} "
+
+rule run_est_dfe_selected:
+    input:
+        rules.generate_dfe_alpha_config.output,
+        rules.run_est_dfe_neutral.output
+    output:
+        "../data/workflow/bootstrap/run_{sample}/{pool}/run_est_dfe_selected.log"
+    params:
+        prefix = "../data/workflow/bootstrap/run_{sample}/{pool}/",
+        sample = "{sample}",
+        pool = "{pool}"
+    group: "dfe_alpha_group"
+    shell:
+        "est_dfe -c {input[1]} &> {output}"
+        
+rule run_est_alpha_omega:
+    input:
+        rules.generate_dfe_alpha_config.output,
+        rules.run_est_dfe_selected.output
+    output:
+        "../data/workflow/bootstrap/run_{sample}/{pool}/run_est_alpha_omega.log"
+    params:
+        prefix = "../data/workflow/bootstrap/run_{sample}/{pool}/",
+        sample = "{sample}",
+        pool = "{pool}"
+    group: "dfe_alpha_group"
+    shell:
+        "est_alpha_omega -c {input[2]} &> {output}"
+        
+rule run_prop_muts_in_s_ranges:
+    input:
+        rules.run_est_alpha_omega.output
+    output:
+        "../data/workflow/bootstrap/run_{sample}/{pool}/run_prop_muts_in_s_ranges.log"
+    params:
+        prefix = "../data/workflow/bootstrap/run_{sample}/{pool}/",
+        sample = "{sample}",
+        pool = "{pool}"
+    group: "dfe_alpha_group"
+    shell:
+        "prop_muts_in_s_ranges -c {params.prefix}selected/est_dfe.out -o {params.prefix}output_file &> {output}"
