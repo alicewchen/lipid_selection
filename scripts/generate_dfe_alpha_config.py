@@ -7,13 +7,13 @@ est_dfe_results_neut_dir_path = str(snakemake.params.prefix)+"/neutral/"
 
 #est_dfe_sel_config.txt
 est_dfe_results_sel_dir_path = str(snakemake.params.prefix)+"/selected/"
-est_dfe_demography_results_file_path = str(snakemake.params.prefix)+"/selected/est_dfe.out"
+est_dfe_demography_results_file_path = str(snakemake.params.prefix)+"/neutral/est_dfe.out"
 
 #est_alpha_omega_config.txt
 est_dfe_results_file_path =  est_dfe_results_sel_dir_path+"est_dfe.out"
 neut_egf_file_path = est_dfe_results_neut_dir_path+"neut_egf.out"
 sel_egf_file_path = est_dfe_results_sel_dir_path+"sel_egf.out"
-est_alpha_omega_results_file_path = str(snakemake.params.prefix)+"est_alpha_omega.out"
+est_alpha_omega_results_file_path = str(snakemake.params.prefix)+"/est_alpha_omega.out"
 
 #est_dfe_neut_config.txt
 
