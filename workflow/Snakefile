@@ -9,9 +9,9 @@ scattergather:
     
 rule all:
     input:
+        "../data/workflow/bootstrap/bootstrap_values.txt",
         expand(["../data/workflow/pools/{pool}.pk",
-        "log/notebook/01_Filter_genes_processed_{pool}.ipynb",
-        "../data/workflow/bootstrap/{pool}_bootstrap_values.txt"], pool = pool),
+        "log/notebook/01_Filter_genes_processed_{pool}.ipynb"], pool = pool),
         expand(["../data/workflow/samples/{pool}_{sample}.pk",
         "../data/workflow/bootstrap/run_{sample}/{pool}/SFS_input.txt",
         "../data/workflow/bootstrap/run_{sample}/{pool}/divergence_file.txt",
@@ -147,8 +147,6 @@ rule run_prop_muts_in_s_ranges:
  
 ##### 5. Get important values ##### 
 
-
-
 rule extract_values:
     input:
         omega_output = rules.run_est_alpha_omega.output,
@@ -164,11 +162,8 @@ rule extract_values:
         
 rule aggregate:
     input:
-        expand("../data/workflow/bootstrap/run_{sample}/{{pool}}/important_values.txt", sample = sample, pool = pool)
+        expand("../data/workflow/bootstrap/run_{sample}/{pool}/important_values.txt", sample = sample, pool = pool)
     output:
-        "../data/workflow/bootstrap/{pool}_bootstrap_values.txt"
-    params:
-        prefix = "../data/workflow/bootstrap/{pool}_bootstrap_values.txt",
-        pool = "{pool}"
+        "../data/workflow/bootstrap/bootstrap_values.txt"
     script:
         "../scripts/gather_values.py"
