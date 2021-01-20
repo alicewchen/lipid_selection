@@ -10,7 +10,7 @@ MANIPULATED_GENE : 2
 #<options> 2, 1, 0 
 #2 = include all
 #1 = include only studies that manipulated genes
-#0 = include only studies that did not manipulat genes
+#0 = include only studies that did not manipulate genes
 
 pathway  : []
 
@@ -20,10 +20,18 @@ MIN_NUM_MANIPULATED : 0 #minimum number of studies that manipulated gene X
 
 MIN_NUM_DETECTED : 1 #minimum number of studies that detected gene X as a candidate gene
 
+#candidate gene =   num_sampled >= MIN_NUM_SAMPLED & \
+#                   num_manipulated >= MIN_NUM_MANIPULATED & \
+#                   num_detect >= MIN_NUM_DETECTED
+
+#noncandidate gene =    num_sampled >= MIN_NUM_SAMPLED & \
+#                       num_manipulated >= MIN_NUM_MANIPULATED & \
+#                       num_detect <= MIN_NUM_DETECTED
+
 ###########################
 # Boostrapping parameters #
 ###########################
 
 RSAMPLE_SIZE : 100 #number of genes to randomly sample
 
-SAMPLE_N : 3 #number of boostrap w/ replacement samples
+SAMPLE_N : 100 #number of boostrap w/ replacement samples
