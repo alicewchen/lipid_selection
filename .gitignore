@@ -1,2 +1,3 @@
-*/vcf/ 
-.ipynb_checkpoints/ 
+.ipynb_checkpoints/
+*/recycle_bin/
+*.pk
