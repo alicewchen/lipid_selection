@@ -54,7 +54,7 @@ sample_list = df.index
 ####################
 
 sample = bootstrap_with_replacement(sample_list = sample_list,
-                                    size = snakemake.config['RSAMPLE_SIZE'],
+                                    size = sample_list.shape[0],
                                     rep = n_sample)
 
 selected, neutral = get_total_SFSs(list_of_indexes = sample, 
