@@ -1,5 +1,4 @@
 ##### load config and sample sheets #####
-
 configfile: "../config/config.yaml"
 pool= ['candidate', 'noncandidate']
 sample= list(range(config["SAMPLE_N"])) 
@@ -36,7 +35,7 @@ rule filter_genes:
         "../data/workflow/sampled_genes.pk",
         "../data/workflow/SFS_and_divergence.pk"
     output:
-        "../data/workflow/pools/{pool}.pk"
+        temp("../data/workflow/pools/{pool}.pk")
     params:
         prefix = "../data/workflow/pools/{pool}.pk"
     log:
@@ -53,7 +52,7 @@ rule random_sample:
     input:
         rules.filter_genes.output
     output: 
-        "../data/workflow/samples/{pool}_{sample}.pk"
+        temp("../data/workflow/samples/{pool}_{sample}.pk")
     params:
         sample = "{sample}",
         prefix = "../data/workflow/samples/{pool}_{sample}.pk"
@@ -67,8 +66,8 @@ rule generate_dfe_alpha_input:
     input:
         rules.random_sample.output
     output:
-        "../data/workflow/bootstrap/run_{sample}/{pool}/SFS_input.txt",
-        "../data/workflow/bootstrap/run_{sample}/{pool}/divergence_file.txt"
+        temp("../data/workflow/bootstrap/run_{sample}/{pool}/SFS_input.txt"),
+        temp("../data/workflow/bootstrap/run_{sample}/{pool}/divergence_file.txt")
     params:
         prefix = "../data/workflow/bootstrap/run_{sample}/{pool}"
     script:
@@ -78,9 +77,9 @@ rule generate_dfe_alpha_config:
     input:
         rules.generate_dfe_alpha_input.output
     output:
-        "../data/workflow/bootstrap/run_{sample}/{pool}/est_dfe_neut_config.txt",
-        "../data/workflow/bootstrap/run_{sample}/{pool}/est_dfe_sel_config.txt",
-        "../data/workflow/bootstrap/run_{sample}/{pool}/est_alpha_omega_config.txt"
+        temp("../data/workflow/bootstrap/run_{sample}/{pool}/est_dfe_neut_config.txt"),
+        temp("../data/workflow/bootstrap/run_{sample}/{pool}/est_dfe_sel_config.txt"),
+        temp("../data/workflow/bootstrap/run_{sample}/{pool}/est_alpha_omega_config.txt")
     params:
         config_template_dir = "../data/workflow/dfe_alpha_config_template/",
         prefix = "../data/workflow/bootstrap/run_{sample}/{pool}",
@@ -96,7 +95,7 @@ rule run_est_dfe_neutral:
     input:
         rules.generate_dfe_alpha_config.output
     output:
-        "../data/workflow/bootstrap/run_{sample}/{pool}/run_est_dfe_neutral.log"
+        temp("../data/workflow/bootstrap/run_{sample}/{pool}/run_est_dfe_neutral.log")
     params:
         prefix = "../data/workflow/bootstrap/run_{sample}/{pool}/",
         sample = "{sample}",
@@ -110,7 +109,7 @@ rule run_est_dfe_selected:
         rules.generate_dfe_alpha_config.output,
         rules.run_est_dfe_neutral.output
     output:
-        "../data/workflow/bootstrap/run_{sample}/{pool}/run_est_dfe_selected.log"
+        temp("../data/workflow/bootstrap/run_{sample}/{pool}/run_est_dfe_selected.log")
     params:
         prefix = "../data/workflow/bootstrap/run_{sample}/{pool}/",
         sample = "{sample}",
@@ -124,7 +123,7 @@ rule run_est_alpha_omega:
         rules.generate_dfe_alpha_config.output,
         rules.run_est_dfe_selected.output
     output:
-        "../data/workflow/bootstrap/run_{sample}/{pool}/run_est_alpha_omega.log"
+        temp("../data/workflow/bootstrap/run_{sample}/{pool}/run_est_alpha_omega.log")
     params:
         prefix = "../data/workflow/bootstrap/run_{sample}/{pool}/",
         sample = "{sample}",
@@ -137,8 +136,8 @@ rule run_prop_muts_in_s_ranges:
     input:
         rules.run_est_alpha_omega.output
     output:
-        output_file = "../data/workflow/bootstrap/run_{sample}/{pool}/output_file",
-        output_log = "../data/workflow/bootstrap/run_{sample}/{pool}/run_prop_muts_in_s_ranges.log"
+        output_file = temp("../data/workflow/bootstrap/run_{sample}/{pool}/output_file"),
+        output_log = temp("../data/workflow/bootstrap/run_{sample}/{pool}/run_prop_muts_in_s_ranges.log")
     params:
         prefix = "../data/workflow/bootstrap/run_{sample}/{pool}/",
         sample = "{sample}",
@@ -155,7 +154,7 @@ rule extract_values:
         omega_output = rules.run_est_alpha_omega.output,
         prop_output = rules.run_prop_muts_in_s_ranges.output.output_file,
     output:
-        "../data/workflow/bootstrap/run_{sample}/{pool}/important_values.txt"
+        temp("../data/workflow/bootstrap/run_{sample}/{pool}/important_values.txt")
     params:
         prefix = "../data/workflow/bootstrap/run_{sample}/{pool}/",
         sample = "{sample}",
