@@ -24,7 +24,8 @@ rule all:
         "../data/workflow/bootstrap/run_{sample}/{pool}/important_values.txt"], pool = pool, sample = sample),
         expand(["{output_dir}/config.yaml",
             "{output_dir}/environment.yaml",
-            "{output_dir}/bootstrap_values.txt"], output_dir = config["SM_OUTPUT_DIR"])
+            "{output_dir}/bootstrap_values.txt",
+            "{output_dir}/snakemake_DAG.pdf"], output_dir = config["SM_OUTPUT_DIR"])
         
         
 ##### 1. Filter genes ##### 
@@ -185,5 +186,13 @@ rule save_workflow:
         output_dir = config["SM_OUTPUT_DIR"]
     shell:
         "cp {input} {wildcards.output_dir}/"
+        
+rule export_workflow_DAG:
+    output:
+        "{output_dir}/snakemake_DAG.pdf"
+    params:
+        output_dir = config["SM_OUTPUT_DIR"]
+    shell:
+        "snakemake --dag | dot -Tpdf > {output} "
         
         
