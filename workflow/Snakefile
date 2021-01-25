@@ -8,8 +8,7 @@ scattergather:
     split=len(pool)*len(sample)
     
 rule all:
-    input:
-        "../data/workflow/bootstrap/bootstrap_values.txt",
+    input:    
         expand(["../data/workflow/pools/{pool}.pk",
         "log/notebook/01_Filter_genes_processed_{pool}.ipynb"], pool = pool),
         expand(["../data/workflow/samples/{pool}_{sample}.pk",
@@ -22,7 +21,10 @@ rule all:
         "../data/workflow/bootstrap/run_{sample}/{pool}/run_est_dfe_selected.log",
         "../data/workflow/bootstrap/run_{sample}/{pool}/run_est_alpha_omega.log",
         "../data/workflow/bootstrap/run_{sample}/{pool}/run_prop_muts_in_s_ranges.log",
-        "../data/workflow/bootstrap/run_{sample}/{pool}/important_values.txt"], pool = pool, sample = sample)
+        "../data/workflow/bootstrap/run_{sample}/{pool}/important_values.txt"], pool = pool, sample = sample),
+        expand(["{output_dir}/config.yaml",
+            "{output_dir}/environment.yaml",
+            "{output_dir}/bootstrap_values.txt"], output_dir = config["SM_OUTPUT_DIR"])
         
         
 ##### 1. Filter genes ##### 
@@ -164,6 +166,24 @@ rule aggregate:
     input:
         expand("../data/workflow/bootstrap/run_{sample}/{pool}/important_values.txt", sample = sample, pool = pool)
     output:
-        "../data/workflow/bootstrap/bootstrap_values.txt"
+        expand("{prefix}/bootstrap_values.txt", prefix = config["SM_OUTPUT_DIR"])
+    params:
+        prefix = config["SM_OUTPUT_DIR"]
     script:
         "../scripts/gather_values.py"
+        
+#### 6. Create copy of workflow config and output files ####
+
+rule save_workflow:
+    input:
+        "../config/config.yaml",
+        "../env/environment.yaml",
+    output:
+        "{output_dir}/config.yaml",
+        "{output_dir}/environment.yaml",
+    params:
+        output_dir = config["SM_OUTPUT_DIR"]
+    shell:
+        "cp {input} {wildcards.output_dir}/"
+        
+        
