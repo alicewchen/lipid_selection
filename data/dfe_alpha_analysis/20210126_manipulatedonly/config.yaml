@@ -1,0 +1,52 @@
+
+##################################################
+# Filter transcripts by the following conditions #
+##################################################
+
+type_of_study : []
+#<options> ['RT_qPCR', 'gene_silence', 'genetic_transformation', 'genomics', 'knock_out', 'proteomics', 'transcriptomics']
+
+MANIPULATED_GENE : 1
+#<options> 2, 1, 0 
+#2 = include all
+#1 = include only studies that manipulated genes
+#0 = include only studies that did not manipulate genes
+
+pathway  : []
+#relevant lipid pathways:
+# 'Creinhardtii LIPAS-PWY' = triacylglycerol degradation
+# 'Creinhardtii TRIGLSYN-PWY'= diacylglycerol and triacylglycerol biosynthesis
+# 'Creinhardtii PWY-5156' = superpathway of fatty acid biosynthesis II (plant)
+
+MIN_NUM_SAMPLED : 1 #minimum number of studies that sampled gene X
+
+MIN_NUM_MANIPULATED : 0 #minimum number of studies that manipulated gene X
+
+MIN_NUM_DETECTED : 1 #minimum number of studies that detected gene X as a candidate gene
+
+#candidate gene =   num_sampled >= MIN_NUM_SAMPLED & \
+#                   num_manipulated >= MIN_NUM_MANIPULATED & \
+#                   num_detect >= MIN_NUM_DETECTED
+
+#noncandidate gene =    num_sampled >= MIN_NUM_SAMPLED & \
+#                       num_manipulated >= MIN_NUM_MANIPULATED & \
+#                       num_detect < MIN_NUM_DETECTED
+
+###########################
+# Bootstrapping parameters #
+###########################
+
+
+#RSAMPLE_SIZE : 100 #number of genes to randomly sample
+#sample same number of gene as pool size; do not maunally define number
+#candidate pool (sample same number of gene as candidate pool from candidate pool) 
+#noncandidate pool = (sample same number of gene as candidate pool from noncandidate pool)
+
+SAMPLE_N : 100 #number of boostrap w/ replacement samples
+#normally max is 1000
+
+###########################
+# Workflow output folder  #
+###########################
+
+SM_OUTPUT_DIR : "../data/dfe_alpha_analysis/20210126_manipulatedonly"
