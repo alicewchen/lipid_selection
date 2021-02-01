@@ -3,9 +3,6 @@
 #####################################
 import pickle
 import sys
-print(sys.executable)
-print(sys.version)
-print(sys.path)
 sys.path.extend(['/scratch/research/repos', 
                  '/scratch/research/repos/ness_fasta', 
                  '/scratch/research/repos/annotation', 
