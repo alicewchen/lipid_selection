@@ -1,10 +1,10 @@
 ##### load config and sample sheets #####
+import pandas as pd
+import pickle as pk 
+
 configfile: "../config/config.yaml"
 pool= ['candidate', 'noncandidate']
 sample= list(range(config["SAMPLE_N"])) 
-
-scattergather:
-    split=len(pool)*len(sample)
     
 rule all:
     input:    
@@ -24,7 +24,8 @@ rule all:
         expand(["{output_dir}/config.yaml",
             "{output_dir}/environment.yaml",
             "{output_dir}/bootstrap_values.txt",
-            "{output_dir}/snakemake_DAG.pdf"], output_dir = config["SM_OUTPUT_DIR"])
+            "{output_dir}/snakemake_DAG.pdf",
+            "{output_dir}/pool_size.txt"], output_dir = config["SM_OUTPUT_DIR"]),
         
         
 ##### 1. Filter genes ##### 
@@ -43,7 +44,18 @@ rule filter_genes:
     notebook:
         "../analysis/04_filter_data/01_Filter_genes.ipynb"
      
-     
+rule pool_size:
+    input:
+        expand("../data/workflow/pools/{pool}.pk", pool = pool)
+    output:
+        expand("{output_dir}/pool_size.txt", output_dir = config["SM_OUTPUT_DIR"])
+    params:
+        prefix = config["SM_OUTPUT_DIR"]
+    script:
+        "../scripts/pool_size.py"
+        
+    
+        
 #####  2. Boostrapping ##### 
 
 #Randomly sample n = RSAMPLE_SIZE genes from each pool of candidate and noncandidate genes
@@ -55,7 +67,8 @@ rule random_sample:
         temp("../data/workflow/samples/{pool}_{sample}.pk")
     params:
         sample = "{sample}",
-        prefix = "../data/workflow/samples/{pool}_{sample}.pk"
+        prefix = "../data/workflow/samples/{pool}_{sample}.pk",
+        candidate_pool = "../data/workflow/pools/candidate.pk"
     script:
         "../scripts/random_sampling.py"
 
@@ -70,6 +83,7 @@ rule generate_dfe_alpha_input:
         temp("../data/workflow/bootstrap/run_{sample}/{pool}/divergence_file.txt")
     params:
         prefix = "../data/workflow/bootstrap/run_{sample}/{pool}"
+    group: "dfe_alpha_group"
     script:
         "../scripts/generate_dfe_alpha_input.py"
 
@@ -85,6 +99,7 @@ rule generate_dfe_alpha_config:
         prefix = "../data/workflow/bootstrap/run_{sample}/{pool}",
         sample = "{sample}",
         pool = "{pool}"
+    group: "dfe_alpha_group"
     script:
         "../scripts/generate_dfe_alpha_config.py"
 
@@ -109,7 +124,7 @@ rule run_est_dfe_selected:
         rules.generate_dfe_alpha_config.output,
         rules.run_est_dfe_neutral.output
     output:
-        temp("../data/workflow/bootstrap/run_{sample}/{pool}/run_est_dfe_selected.log")
+        "../data/workflow/bootstrap/run_{sample}/{pool}/run_est_dfe_selected.log"
     params:
         prefix = "../data/workflow/bootstrap/run_{sample}/{pool}/",
         sample = "{sample}",
@@ -182,7 +197,7 @@ rule save_workflow:
         "{output_dir}/config.yaml",
         "{output_dir}/environment.yaml",
     params:
-        output_dir = config["SM_OUTPUT_DIR"]
+        output_dir = config["SM_OUTPUT_DIR"],
     shell:
         "cp {input} {wildcards.output_dir}/"
         
