@@ -7,9 +7,6 @@ import random
 import numpy as np
 
 import sys
-print(sys.executable)
-print(sys.version)
-print(sys.path)
 sys.path.extend(['/scratch/research/repos', 
                  '/scratch/research/repos/ness_fasta', 
                  '/scratch/research/repos/annotation', 
@@ -43,9 +40,11 @@ def get_total_SFSs (list_of_indexes, SFS_dataframe):
 ####################
 #Define variables
 ####################
-
+with open(str(snakemake.params.candidate_pool), "rb") as f:
+    f = pd.read_pickle(f)
+    
+pool_size = len(f)
 n_sample = int(snakemake.params.sample)
-#pool = snakemake.input.pool
 df = pd.read_pickle(str(snakemake.input))
 sample_list = df.index
 
@@ -54,7 +53,7 @@ sample_list = df.index
 ####################
 
 sample = bootstrap_with_replacement(sample_list = sample_list,
-                                    size = sample_list.shape[0],
+                                    size = pool_size,
                                     rep = n_sample)
 
 selected, neutral = get_total_SFSs(list_of_indexes = sample, 
