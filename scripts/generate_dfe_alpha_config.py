@@ -1,4 +1,3 @@
-print(snakemake.input)
 SFS_input_path = snakemake.input[0]
 divergence_file_path = snakemake.input[1]
 
