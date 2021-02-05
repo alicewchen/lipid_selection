@@ -6,8 +6,8 @@ sample= list(range(config["SAMPLE_N"]))
     
 rule all:
     input:    
-        expand(["../data/workflow/pools/{pool}.pk",
-        "log/notebook/01_Filter_genes_processed_{pool}.ipynb"], pool = pool),
+        expand(["../data/workflow/pools/{pool}.pk"], pool = pool),
+        expand(["log/notebook/01_Filter_genes_processed_{pool}.ipynb"], pool = pool, output_dir = config["SM_OUTPUT_DIR"]),
         expand(["../data/workflow/samples/{pool}_{sample}.pk",
         "../data/workflow/bootstrap/run_{sample}/{pool}/SFS_input.txt",
         "../data/workflow/bootstrap/run_{sample}/{pool}/divergence_file.txt",

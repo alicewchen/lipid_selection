@@ -6,8 +6,8 @@ rule filter_genes:
     output:
         temp("../data/workflow/pools/{pool}.pk")
     params:
-        prefix = "../data/workflow/pools/{pool}.pk"
+        prefix = "../data/workflow/pools/{pool}.pk",
     log:
-        notebook="log/notebook/01_multi_Filter_genes_processed_{pool}.ipynb"
+        notebook=config["SM_OUTPUT_DIR"]+"/log/notebook/01_multi_Filter_genes_processed_{pool}.ipynb"
     notebook:
         "../analysis/04_filter_data/01_multi_Filter_genes.ipynb"
