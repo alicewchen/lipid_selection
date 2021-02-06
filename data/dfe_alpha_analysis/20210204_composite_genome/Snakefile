@@ -1,0 +1,46 @@
+##### load config and sample sheets #####
+
+configfile: "../config/config.yaml"
+pool= ['candidate', 'noncandidate']
+sample= list(range(config["SAMPLE_N"])) 
+    
+rule all:
+    input:    
+        expand(["../data/workflow/pools/{pool}.pk"], pool = pool),
+        expand(["log/notebook/01_Filter_genes_processed_{pool}.ipynb"], pool = pool, output_dir = config["SM_OUTPUT_DIR"]),
+        expand(["../data/workflow/samples/{pool}_{sample}.pk",
+        "../data/workflow/bootstrap/run_{sample}/{pool}/SFS_input.txt",
+        "../data/workflow/bootstrap/run_{sample}/{pool}/divergence_file.txt",
+        "../data/workflow/bootstrap/run_{sample}/{pool}/est_dfe_neut_config.txt",
+        "../data/workflow/bootstrap/run_{sample}/{pool}/est_dfe_sel_config.txt",
+        "../data/workflow/bootstrap/run_{sample}/{pool}/est_alpha_omega_config.txt",
+        "../data/workflow/bootstrap/run_{sample}/{pool}/run_est_dfe_neutral.log",
+        "../data/workflow/bootstrap/run_{sample}/{pool}/run_est_dfe_selected.log",
+        "../data/workflow/bootstrap/run_{sample}/{pool}/run_est_alpha_omega.log",
+        "../data/workflow/bootstrap/run_{sample}/{pool}/run_prop_muts_in_s_ranges.log",
+        "../data/workflow/bootstrap/run_{sample}/{pool}/important_values.txt"], pool = pool, sample = sample),
+        expand(["{output_dir}/config.yaml",
+            "{output_dir}/environment.yaml",
+            "{output_dir}/Snakefile",
+            "{output_dir}/bootstrap_values.txt",
+            "{output_dir}/snakemake_DAG.pdf",
+            "{output_dir}/pool_size.txt"], output_dir = config["SM_OUTPUT_DIR"]),
+        
+        
+##### 1. Filter genes ##### 
+include: "../rules/filter_genes.smk"
+include: "../rules/pool_size.smk"
+        
+#####  2. Boostrapping ##### 
+
+include: "../rules/random_sample.smk"
+
+##### 3. Running dfe_alpha ##### 
+
+include: "../rules/dfe_alpha.smk"
+
+##### 5. Save workflow config and output files ####
+
+include: "../rules/save_output.smk"
+        
+        

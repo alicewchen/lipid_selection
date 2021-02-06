@@ -1,0 +1,77 @@
+
+##################################################
+# Filter transcripts by the following conditions #
+##################################################
+
+condition_sets: ['1']
+#List the names of condition sets. Put at least one string value in this list. 
+# Example:
+# condition_sets: ['set1']
+# condition_sets: ['set1', 'set2']
+
+NC_POOL_SOURCE: 'genome'
+#<options> 'genome', 'sampled_genes'
+#'genome': noncandidate gene pool = all genes in C. reinhardtii genome - candidate genes
+#'sampled_genes' = all genes sampled by studies - candidate genes
+# Examples:
+# NC_POOL_SOURCE: 'sampled_genes'
+# NC_POOL_SOURCE: {'set1':'sampled_genes'}
+# NC_POOL_SOURCE: {'set1':'sampled_genes', 'set2':'genome'}
+
+type_of_study : []
+#<options> ['RT_qPCR', 'gene_silence', 'genetic_transformation', 'genomics', 'knock_out', 'proteomics', 'transcriptomics']
+# Examples:
+# type_of_study : ['RT_qPCR', 'gene_silence']
+# type_of_study : {'set1':['RT_qPCR', 'gene_silence']}
+# type_of_study : {'set1':['RT_qPCR', 'gene_silence'], 'set2': ['genomics', 'knock_out']}
+
+not_type_of_study : []
+#<options> ['RT_qPCR', 'gene_silence', 'genetic_transformation', 'genomics', 'knock_out', 'proteomics', 'transcriptomics']
+
+MANIPULATED_GENE : 2
+#<options> 2, 1, 0 
+#2 = include all
+#1 = include only studies that manipulated genes
+#0 = include only studies that did not manipulate genes
+
+pathway  : ['Creinhardtii LIPAS-PWY','Creinhardtii TRIGLSYN-PWY','Creinhardtii PWY-5156']
+#relevant lipid pathways:
+# 'Creinhardtii LIPAS-PWY' = triacylglycerol degradation
+# 'Creinhardtii TRIGLSYN-PWY'= diacylglycerol and triacylglycerol biosynthesis
+# 'Creinhardtii PWY-5156' = superpathway of fatty acid biosynthesis II (plant)
+# 'Creinhardtii PWY-561' = superpathway of glyoxylate cycle and fatty acid degradation
+# 'Creinhardtii CALVIN-PWY' = Calvin-Benson-Bassham cycle	
+# 'Creinhardtii GLUCONEO-PWY' =  gluconeogenesis I	
+# 'Creinhardtii PWY-5464' =	superpathway of cytosolic glycolysis (plants), pyruvate dehydrogenase and TCA cycle
+
+MIN_NUM_SAMPLED : 0 #minimum number of studies that sampled gene X
+
+
+MIN_NUM_DETECTED : 0 #minimum number of studies that detected gene X as a candidate gene
+
+#candidate gene =   num_sampled >= MIN_NUM_SAMPLED & \
+#                   num_manipulated >= MIN_NUM_MANIPULATED & \
+#                   num_detect >= MIN_NUM_DETECTED
+
+#noncandidate gene =    num_sampled >= MIN_NUM_SAMPLED & \
+#                       num_manipulated >= MIN_NUM_MANIPULATED & \
+#                       num_detect < MIN_NUM_DETECTED
+
+###########################
+# Bootstrapping parameters #
+###########################
+
+
+#RSAMPLE_SIZE : 100 #number of genes to randomly sample
+#sample same number of gene as pool size; do not maunally define number
+#candidate pool (sample same number of gene as candidate pool from candidate pool) 
+#noncandidate pool = (sample same number of gene as candidate pool from noncandidate pool)
+
+SAMPLE_N : 100 #number of boostrap w/ replacement samples
+#normally max is 1000
+
+###########################
+# Workflow output folder  #
+###########################
+
+SM_OUTPUT_DIR : "../data/dfe_alpha_analysis/20210204_pathway_genome"
