@@ -1,0 +1,14 @@
+channels:
+  - conda-forge
+  - bioconda
+  - anaconda
+  
+dependencies:
+  - python = 3.9.1
+  - pandas
+  - snakemake = 5.31.1
+  - jupyter
+  - numpy
+  - r-base = 3.6.1
+  - r-dplyr = 0.4.3
+  - r-ggplot2 = 1.0.1

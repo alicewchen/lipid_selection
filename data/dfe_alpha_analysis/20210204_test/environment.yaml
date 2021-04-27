@@ -1,0 +1,11 @@
+channels:
+  - conda-forge
+  - bioconda
+  - anaconda
+  
+dependencies:
+  - python = 3.9.1
+  - pandas
+  - snakemake = 5.31.1
+  - jupyter
+  - numpy

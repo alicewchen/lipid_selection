@@ -1,3 +1,4 @@
+
 ##################################################
 # Filter transcripts by the following conditions #
 ##################################################
@@ -33,7 +34,7 @@ MANIPULATED_GENE : 2
 #1 = include only studies that manipulated genes
 #0 = include only studies that did not manipulate genes
 
-pathway  : ['Creinhardtii LIPAS-PWY','Creinhardtii TRIGLSYN-PWY','Creinhardtii PWY-5156','Creinhardtii PWY-561','Creinhardtii CALVIN-PWY','Creinhardtii GLUCONEO-PWY','Creinhardtii PWY-5464']
+pathway  : []
 #relevant lipid pathways:
 # 'Creinhardtii LIPAS-PWY' = triacylglycerol degradation
 # 'Creinhardtii TRIGLSYN-PWY'= diacylglycerol and triacylglycerol biosynthesis
@@ -43,10 +44,10 @@ pathway  : ['Creinhardtii LIPAS-PWY','Creinhardtii TRIGLSYN-PWY','Creinhardtii P
 # 'Creinhardtii GLUCONEO-PWY' =  gluconeogenesis I	
 # 'Creinhardtii PWY-5464' =	superpathway of cytosolic glycolysis (plants), pyruvate dehydrogenase and TCA cycle
 
-MIN_NUM_SAMPLED : 0 #minimum number of studies that sampled gene X
+MIN_NUM_SAMPLED : 1 #minimum number of studies that sampled gene X
 
 
-MIN_NUM_DETECTED : 0 #minimum number of studies that detected gene X as a candidate gene
+MIN_NUM_DETECTED : 1 #minimum number of studies that detected gene X as a candidate gene
 
 #candidate gene =   num_sampled >= MIN_NUM_SAMPLED & \
 #                   num_manipulated >= MIN_NUM_MANIPULATED & \
@@ -66,11 +67,11 @@ MIN_NUM_DETECTED : 0 #minimum number of studies that detected gene X as a candid
 #candidate pool (sample same number of gene as candidate pool from candidate pool) 
 #noncandidate pool = (sample same number of gene as candidate pool from noncandidate pool)
 
-SAMPLE_N : 100 #number of boostrap w/ replacement samples
+SAMPLE_N : 2 #number of boostrap w/ replacement samples
 #normally max is 1000
 
 ###########################
 # Workflow output folder  #
 ###########################
 
-SM_OUTPUT_DIR : "../data/dfe_alpha_analysis/20210204_extrapathways_genome"
+SM_OUTPUT_DIR : "../data/dfe_alpha_analysis/20210204_test"
