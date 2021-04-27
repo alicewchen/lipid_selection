@@ -1,3 +1,7 @@
 .ipynb_checkpoints/
 */recycle_bin/
 *.pk
+*.pdf
+data/gene_name_conversion/*
+*/log/*
+*/.snakemake/*

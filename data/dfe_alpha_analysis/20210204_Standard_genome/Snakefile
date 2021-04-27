@@ -24,7 +24,7 @@ rule all:
             "{output_dir}/Snakefile",
             "{output_dir}/bootstrap_values.txt",
             "{output_dir}/snakemake_DAG.pdf",
-            "{output_dir}/pool_size.txt"], output_dir = config["SM_OUTPUT_DIR"]),
+            "{output_dir}/pool_size.txt"], output_dir = config["SM_OUTPUT_DIR"])
         
         
 ##### 1. Filter genes ##### 
