@@ -1,0 +1,4 @@
+name: main
+channels:
+  - defaults
+prefix: /research/projects/chlamydomonas/lipid_selection/env/$CONDA_WORKING_DIR/envs/main
