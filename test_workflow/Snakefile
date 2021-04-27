@@ -1,0 +1,25 @@
+rule testpy:
+    output:
+        "test_output/sm_test_output.txt"
+    conda:
+        "../env/environment.yaml"
+    script:
+        "../scripts/test_snakemake.py"
+        
+rule testjp:
+    output:
+        "test_output/jp_notebook.txt"
+    log:
+        notebook="logs/notebooks/processed_notebook.ipynb"
+    notebook:
+        "test_files/test_snakemake.py.ipynb"  
+        
+rule testjp_withinput:
+    input:
+        "test_files/input.txt"
+    output:
+        "test_output/jp_notebook2.txt"
+    log:
+        notebook="logs/notebooks/processed_notebook2.ipynb"
+    notebook:
+        "test_files/test_snakemake2.py.ipynb"
