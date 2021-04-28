@@ -25,9 +25,14 @@ Set working directory as `lipid_selection/workflow`.
 ### Perform dry run of Snakemake
 `snakemake -n`
 
-### test workflow
+### Run snakemake
 `snakemake --use-conda --cores 10`
 `--cores` option selects the number of cores used.
+If snakemake cannot find DFE-alpha commands, run something like the following to locate the DFE-alpha source folder.
+`export PATH=$PATH:/scratch/research/tmp_apps/dfe-alpha-release-2.16/`
+`source ~/.bashrc`
+`export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib/`
+
 
 ### Re-run with parameter changes in the config file
 Sometimes changing a config file affects only a portion of the workflow, so you don't want to re-run the entire workflow again. Running the following command only changes the output file affected by the config change. If an output file has already been generated previously, it will not be updated to reflect the config change. 
