@@ -39,7 +39,7 @@ snakemake -n
 ```
 snakemake --use-conda --cores 10
 ```
-`--cores` option selects the number of cores used.
+`--cores` option selects the number of cores used.  
 If snakemake cannot find DFE-alpha commands, run something like the following to locate the DFE-alpha source folder.
 ```
 export PATH=$PATH:/scratch/research/tmp_apps/dfe-alpha-release-2.16/
